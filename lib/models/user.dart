@@ -1,4 +1,4 @@
-class User {
+class UserModel {
   final String? login;
   final String? name;
   final int? id;
@@ -13,7 +13,7 @@ class User {
   final String? company;
   final String? blog;
 
-  User(
+  UserModel(
       {this.login,
       this.name,
       this.id,
@@ -29,8 +29,8 @@ class User {
       this.blog});
 
 
-   factory User.fromJSON(Map<String,dynamic>jsonMap){
-    final result = User(
+   factory UserModel.fromJSON(Map<String,dynamic>jsonMap){
+    final result = UserModel(
       login: jsonMap['login'],
       name: jsonMap['name'],
       id: jsonMap['id'],
