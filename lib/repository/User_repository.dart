@@ -5,7 +5,7 @@ import 'package:github_search/strings.dart';
 import 'package:http/http.dart' as http;
 
 
-class SearchRepository {
+class UserRepository {
   
   Future<UserModel?> getUsers(String username) async {
     final response = await http.get(Uri.http(base_url, '/$username'));

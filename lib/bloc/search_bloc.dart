@@ -1,13 +1,27 @@
 import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
+import 'package:github_search/repository/User_repository.dart';
 import 'package:meta/meta.dart';
+
+import '../models/user.dart';
 
 part 'search_event.dart';
 part 'search_state.dart';
 
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
-  SearchBloc() : super(SearchInitial()) {
-    on<SearchEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+ UserRepository repo;
+ SearchBloc(this.repo):super(SearchInitial());
+  
+  Stream<SearchState> mapEventToState(SearchEvent event) async*{
+    if (event is SearchingEvent){
+      try{
+        yield SearchInitial();
+
+        final data = await repo.getUsers(event.username!);
+        yield UserState(data!);
+      }catch(e){
+        yield ErrorState(message: e.toString());
+      }
+    }
   }
 }
