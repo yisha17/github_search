@@ -15,7 +15,7 @@ class _SearchPageState extends State<SearchPage> {
         
       ),
         body: Padding(
-      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+      padding: const EdgeInsets.fromLTRB(00, 10, 0, 10),
       child: Container(
         padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
         decoration: BoxDecoration(
@@ -33,12 +33,15 @@ class _SearchPageState extends State<SearchPage> {
                   color: Colors.black,
                 ),
                 hintText: 'Search Github username...',
+                hintStyle: TextStyle(
+                  fontFamily: 'SpaceMono'
+                )
               ),
             ),
             ElevatedButton(
               onPressed: () {},
               child: const SizedBox(
-                height: 50,
+                height: 40,
                 width: 80,
                 child: Center(
                   child: Text(
