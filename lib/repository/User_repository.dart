@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 class UserRepository {
   
   Future<UserModel?> getUsers(String username) async {
-    final response = await http.get(Uri.http(base_url, '/$username'));
+    final response = await http.get(Uri.http(baseUrl, '/$username'));
 
     if (response.statusCode == 200) {
       try {

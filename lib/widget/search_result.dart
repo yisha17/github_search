@@ -1,7 +1,2 @@
 
 
-class UserRow extends StatelessWidget{
-
-
-  
-}
