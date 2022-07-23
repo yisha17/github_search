@@ -12,6 +12,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
  UserRepository repo;
  SearchBloc(this.repo):super(SearchInitial());
   
+  @override
   Stream<SearchState> mapEventToState(SearchEvent event) async*{
     if (event is SearchingEvent){
       try{

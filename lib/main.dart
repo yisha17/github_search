@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'SpaceMono',
+        scaffoldBackgroundColor: const Color(0x001E2A47),
         primarySwatch: Colors.blue,
       ),
       home:const SearchPage(),

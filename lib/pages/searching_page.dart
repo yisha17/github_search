@@ -12,10 +12,26 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(
-        
+        title: const Text('devfinder'),
+        actions: [
+          TextButton(
+            child: Row(
+              // ignore: prefer_const_literals_to_create_immutables
+              children: [
+                 const Text('Light',style: TextStyle(
+                  color: Colors.white
+                ),),
+                const Icon(Icons.sunny,color: Colors.white,)
+                ,
+              ],
+            ),
+            onPressed: (){
+            debugPrint('hello');
+            },)
+        ],
       ),
         body: Padding(
-      padding: const EdgeInsets.fromLTRB(00, 10, 0, 10),
+      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
       child: Container(
         padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
         decoration: BoxDecoration(
