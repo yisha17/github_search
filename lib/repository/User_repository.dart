@@ -1,14 +1,14 @@
 import 'dart:convert';
 
 import 'package:github_search/models/user.dart';
-import 'package:github_search/strings.dart';
+import 'package:github_search/constant/strings.dart';
 import 'package:http/http.dart' as http;
 
 
 class UserRepository {
   
   Future<UserModel?> getUsers(String username) async {
-    final response = await http.get(Uri.http(baseUrl, '/$username'));
+    final response = await http.get(Uri.http(baseUrl,username));
 
     if (response.statusCode == 200) {
       try {
