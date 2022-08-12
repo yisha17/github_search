@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:github_search/widget/search_result.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -38,37 +39,44 @@ class _SearchPageState extends State<SearchPage> {
           border: Border.all(color: Colors.black45),
           borderRadius: BorderRadius.circular(8.0),
         ),
-        child: Stack(
-          alignment: Alignment.centerRight,
+        child: Column(
           children: [
-            TextFormField(
-              decoration: const InputDecoration(
-                border: InputBorder.none,
-                prefixIcon: Icon(
-                  Icons.search,
-                  color: Colors.black,
-                ),
-                hintText: 'Search Github username...',
-                hintStyle: TextStyle(
-                  fontFamily: 'SpaceMono'
-                )
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: const SizedBox(
-                height: 40,
-                width: 80,
-                child: Center(
-                  child: Text(
-                    'Search',
+            Stack(
+              alignment: Alignment.centerRight,
+              children: [
+                TextFormField(
+                  decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    prefixIcon: Icon(
+                      Icons.search,
+                      color: Colors.black,
+                    ),
+                    hintText: 'Search Github username...',
+                    hintStyle: TextStyle(
+                      fontFamily: 'SpaceMono'
+                    )
                   ),
                 ),
-              ),
-              style: ElevatedButton.styleFrom(
-                maximumSize: const Size.fromHeight(80),
-              ),
-            )
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const SizedBox(
+                    height: 40,
+                    width: 80,
+                    child: Center(
+                      child: Text(
+                        'Search',
+                      ),
+                    ),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    maximumSize: const Size.fromHeight(80),
+                  ),
+                  
+                )
+              ],
+            ),
+
+            const SearchResult()
           ],
         ),
       ),
